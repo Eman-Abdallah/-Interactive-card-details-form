@@ -146,8 +146,6 @@
           font-weight: 500;
           padding: 10px;
           font-size: 18px; }
-        .d-flex .purple .first-card .circles {
-          width: 10px !important; }
       .d-flex .purple .d-flex {
         display: flex;
         flex-direction: row;
