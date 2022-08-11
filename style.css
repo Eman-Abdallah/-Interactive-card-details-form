@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif; }
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  gap: 100px; }
+  .d-flex .purple {
+    background: url(./images/bg-main-desktop.png) no-repeat center center/cover;
+    width: 30%;
+    height: 100vh;
+    position: relative;
+    margin-right: 300px !important; }
+    .d-flex .purple .first-card {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      background: url(./images/bg-card-front.png) no-repeat center center/cover;
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+      .d-flex .purple .first-card .card-number {
+        margin-top: 40px;
+        font-weight: 500;
+        padding: 10px; }
+      .d-flex .purple .first-card .d-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 10px; }
+        .d-flex .purple .first-card .d-flex h2 {
+          font-weight: 200;
+          font-size: 14px;
+          text-transform: uppercase; }
+    .d-flex .purple .second-card {
+      background: url(./images/bg-card-back.png) no-repeat center center/cover;
+      width: 100%;
+      height: 250px;
+      position: absolute;
+      border-radius: 10px;
+      top: 52%;
+      left: 67%;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+      .d-flex .purple .second-card h3 {
+        color: white;
+        text-align: end;
+        margin-top: 26%;
+        margin-right: 50px;
+        font-weight: 200;
+        font-size: 16px;
+        text-transform: uppercase; }
+  .d-flex .white {
+    background-color: white;
+    width: 30%;
+    height: 100vh;
+    padding-top: 180px; }
+    .d-flex .white form {
+      display: block; }
+      .d-flex .white form .d-flex {
+        justify-content: flex-start;
+        height: 100px;
+        gap: 10px !important; }
+    .d-flex .white label {
+      display: block;
+      text-transform: uppercase;
+      padding: 5px 0;
+      color: #21092f;
+      margin: 10px auto 5px; }
+    .d-flex .white .error {
+      color: #ff5252;
+      padding: 10px;
+      display: block;
+      font-size: 14px; }
+    .d-flex .white input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #dedddf;
+      border-radius: 5px;
+      margin: 5px auto;
+      height: 40px;
+      margin-right: 13px; }
+      .d-flex .white input::placeholder {
+        color: #dedddf;
+        font-size: 16px; }
+      .d-flex .white input.small-input {
+        width: 80px; }
+    .d-flex .white .date .d-flex {
+      height: 50PX;
+      gap: 1px !important; }
+    .d-flex .white .btn {
+      display: block;
+      margin: 20px 10px;
+      background-color: #21092f;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 200;
+      border: none;
+      border-radius: 10px;
+      width: 85% !important;
+      text-decoration: none;
+      text-align: center; }
+    .d-flex .white .thanks {
+      display: none;
+      padding-top: 100px; }
+      .d-flex .white .thanks .d-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px !important; }
+        .d-flex .white .thanks .d-flex svg {
+          margin: 10px; }
+        .d-flex .white .thanks .d-flex h4 {
+          font-size: 25px;
+          font-weight: 500px;
+          color: #21092f;
+          padding: 10px; }
+        .d-flex .white .thanks .d-flex p {
+          color: #8e8593; }
+
+@media (max-width: 400px) {
+  .d-flex {
+    flex-direction: column;
+    gap: 0 !important; }
+    .d-flex .purple {
+      background-image: url(./images/bg-main-mobile.png);
+      width: 100%;
+      height: 300px !important; }
+      .d-flex .purple .first-card {
+        top: 52%;
+        left: 5%;
+        width: 75%;
+        height: 150px;
+        z-index: 10;
+        padding: 10px; }
+        .d-flex .purple .first-card .card-number {
+          margin-top: 10px;
+          font-weight: 500;
+          padding: 10px;
+          font-size: 18px; }
+        .d-flex .purple .first-card .circles {
+          width: 10px !important; }
+      .d-flex .purple .d-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px !important;
+        padding: 10px !important; }
+        .d-flex .purple .d-flex h2 {
+          font-size: 10px !important; }
+      .d-flex .purple .second-card {
+        width: 75%;
+        height: 150px;
+        position: absolute;
+        border-radius: 10px;
+        top: 10%;
+        left: 20%; }
+        .d-flex .purple .second-card h3 {
+          margin-top: 22%; }
+    .d-flex .white {
+      padding-top: 10px;
+      width: 100%;
+      position: relative; }
+      .d-flex .white form {
+        position: absolute;
+        top: 30px;
+        padding: 10px; }
+        .d-flex .white form .card-name {
+          padding-top: 50px; }
+        .d-flex .white form input {
+          width: 100%; }
+        .d-flex .white form .d-flex {
+          flex-direction: row; }
+      .d-flex .white .btn {
+        margin: 10px auto 20px !important;
+        position: absolute;
+        top: 90%;
+        left: 20px; }
+      .d-flex .white .thanks {
+        padding-top: 10px;
+        position: absolute;
+        top: 100px;
+        left: 65px;
+        height: 300px; } }
+
+/*# sourceMappingURL=style.css.map */

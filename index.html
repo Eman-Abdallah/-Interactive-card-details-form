@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex">
+            <div class="purple">
+                <div class="first-card">
+                    <div class="circles">
+                        <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+                    </div>
+                    <h1 id="cards-number" class="card-number">
+                        0000 0000 0000 0000
+                    </h1>
+                    <div class="d-flex">
+                        <h2 class="name" id="name">Eman Shaltoot</h2>
+                        <h2 class="date" id="date"> <span id="month">00</span> / <span id="year">00</span></h2>
+                    </div>
+
+                </div>
+                <div class="second-card">
+                    <h3 id="back">000</h3>
+                </div>
+            </div>
+            <div class="white">
+                <form name="myForm" id="form">
+                    <div class="card-name">
+                        <label for="name"> Cardholder Name</label>
+                        <input type="text" name="card-name" id="card-name" oninput="validateName()" placeholder=" e.g. Jane Appleseed">
+                    </div>
+                    <div class="number">
+                        <label for="number"> Card Number</label>
+                        <input type="tel" id="number" name="card-number" oninput="validateCard()" placeholder="e.g. 1234 5678 9123 0000">
+                        <span class="error" id="error-one"></span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="date">
+                            <label for="name"> Exp. Date (MM/YY)</label>
+                            <div class="d-flex">
+                                <input type="number" class="small-input" oninput="validateMonth()" name="card-month" id="month" placeholder="MM">
+                                <input type="number" class="small-input" oninput="validateYear()" name="card-year" placeholder="YY" id="year">
+
+                            </div>
+                            <span class="error" id="error-two"></span>
+                        </div>
+
+                        <div class="cvc">
+                            <label for="cvc"> CVC</label>
+                            <input type="number" id="cvc" placeholder="e.g. 123" oninput="validateCvc()" name="card-cvc">
+                            <span class="error" id="error-three"></span>
+                        </div>
+                    </div>
+
+
+
+                </form>
+                <button id="submit" onclick="onConfirm()" class="btn">Confirm</button>
+                <div class="thanks " id="thanks">
+                    <div class="d-flex">
+                        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+                        <h4>Thank you!</h4>
+                        <p>We've added your card details</p>
+                        <button id="submit" class="btn ">Continue </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.frontendmentor.io/profile/Eman-Abdallah">Eman Shaltoot</a>.
+    </footer>
+    <script>
+        errorTwo = document.querySelector('#error-two')
+        month = document.querySelector('#month')
+        year = document.querySelector('#year')
+        cardName = document.querySelector('#name')
+        cardNumber = document.querySelector('#cards-number')
+        errorOne = document.querySelector('#error-one')
+        errorThree = document.querySelector('#error-three')
+        back = document.querySelector('#back')
+        let form = document.querySelector('#form')
+        let thanks = document.querySelector('#thanks')
+        let submit = document.querySelector('#submit')
+            // check on name
+        function validateName() {
+            let name = document.forms["myForm"]["card-name"].value;
+            cardName.innerText = name;
+        }
+        // check if the year is valid
+        function validateYear() {
+            let y = document.forms["myForm"]["card-year"].value;
+            if (y == "") {
+                errorTwo.innerText = 'Cant not be blank';
+            } else {
+                errorTwo.innerText = '';
+                year.innerText = y;
+            }
+        }
+        // check if the month is valid
+        function validateMonth() {
+            let x = document.forms["myForm"]["card-month"].value;
+            if (x == "") {
+                errorTwo.innerText = 'Cant not be blank';
+            } else {
+                errorTwo.innerText = '';
+                month.innerText = x;
+            }
+        }
+        // check if the card number contains any letters
+        function validateCard() {
+            let n = document.forms["myForm"]["card-number"].value;
+            var regExp = /[a-zA-Z]/g
+            if (regExp.test(n)) {
+                errorOne.innerText = 'Wrong formate, numbers only';
+            } else {
+                errorOne.innerText = '';
+                cardNumber.innerText = n;
+            }
+        }
+        // check if the cvc is valid
+        function validateCvc() {
+            let cvc = document.forms["myForm"]["card-cvc"].value;
+
+            if (cvc === '') {
+                errorThree.innerText = 'Cant not be blank';
+            } else {
+                errorThree.innerText = '';
+                back.innerText = cvc;
+            }
+        }
+        // change to thanks card on confirm
+
+
+        function onConfirm() {
+            console.log('submit');
+            submit.style.display = 'none';
+            form.style.display = 'none';
+            thanks.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+$Red: hsl(0, 100%, 66%);
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dar-violet: hsl(278, 68%, 11%);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.d-flex {
+    display: flex;
+    // justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    gap: 100px;
+    .purple {
+        background: url(./images/bg-main-desktop.png) no-repeat center center/cover;
+        width: 30%;
+        height: 100vh;
+        position: relative;
+        margin-right: 300px!important;
+        .first-card {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            background: url(./images/bg-card-front.png) no-repeat center center/cover;
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            padding: 20px;
+            color: $White;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            .card-number {
+                margin-top: 40px;
+                font-weight: 500;
+                padding: 10px;
+            }
+            .d-flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+                padding: 10px;
+                h2 {
+                    font-weight: 200;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .second-card {
+            background: url(./images/bg-card-back.png) no-repeat center center/cover;
+            width: 100%;
+            height: 250px;
+            position: absolute;
+            border-radius: 10px;
+            top: 52%;
+            left: 67%;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            h3 {
+                color: $White;
+                text-align: end;
+                margin-top: 26%;
+                margin-right: 50px;
+                font-weight: 200;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .white {
+        background-color: $White;
+        width: 30%;
+        height: 100vh;
+        padding-top: 180px;
+        form {
+            display: block;
+            .d-flex {
+                justify-content: flex-start;
+                height: 100px;
+                gap: 10px !important;
+            }
+        }
+        label {
+            display: block;
+            text-transform: uppercase;
+            padding: 5px 0;
+            color: $Very-dar-violet;
+            margin: 10px auto 5px;
+        }
+        .error {
+            color: $Red;
+            padding: 10px;
+            display: block;
+            font-size: 14px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid $Light-grayish-violet;
+            border-radius: 5px;
+            margin: 5px auto;
+            height: 40px;
+            margin-right: 13px;
+            &::placeholder {
+                color: $Light-grayish-violet;
+                font-size: 16px;
+            }
+            &.small-input {
+                width: 80px;
+            }
+        }
+        .date {
+            .d-flex {
+                height: 50PX;
+                gap: 1px !important;
+            }
+        }
+        .btn {
+            display: block;
+            margin: 20px 10px;
+            background-color: $Very-dar-violet;
+            color: $White;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 200;
+            border: none;
+            border-radius: 10px;
+            width: 85% !important;
+            text-decoration: none;
+            text-align: center;
+        }
+        .thanks {
+            display: none;
+            padding-top: 100px;
+            .d-flex {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px!important;
+                svg {
+                    margin: 10px;
+                }
+                h4 {
+                    font-size: 25px;
+                    font-weight: 500px;
+                    color: $Very-dar-violet;
+                    padding: 10px;
+                }
+                p {
+                    color: $Dark-grayish-violet;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .d-flex {
+        flex-direction: column;
+        gap: 0 !important;
+        .purple {
+            background-image: url(./images/bg-main-mobile.png);
+            width: 100%;
+            height: 300px !important;
+            .first-card {
+                top: 52%;
+                left: 5%;
+                width: 75%;
+                height: 150px;
+                z-index: 10;
+                padding: 10px;
+                .card-number {
+                    margin-top: 10px;
+                    font-weight: 500;
+                    padding: 10px;
+                    font-size: 18px;
+                }
+                .circles {
+                    width: 10px !important;
+                }
+            }
+            .d-flex {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 20px !important;
+                padding: 10px !important;
+                h2 {
+                    font-size: 10px !important;
+                }
+            }
+            .second-card {
+                width: 75%;
+                height: 150px;
+                position: absolute;
+                border-radius: 10px;
+                top: 10%;
+                left: 20%;
+                h3 {
+                    margin-top: 22%;
+                }
+            }
+        }
+        .white {
+            padding-top: 10px;
+            width: 100%;
+            position: relative;
+            form {
+                position: absolute;
+                top: 30px;
+                padding: 10px;
+                .card-name {
+                    padding-top: 50px;
+                }
+                input {
+                    width: 100%;
+                }
+                .d-flex {
+                    flex-direction: row;
+                }
+            }
+            .btn {
+                margin: 10px auto 20px !important;
+                position: absolute;
+                top: 90%;
+                left: 20px;
+            }
+            .thanks {
+                padding-top: 10px;
+                position: absolute;
+                top: 100px;
+                left: 65px;
+                height: 300px;
+            }
+        }
+    }
+}
